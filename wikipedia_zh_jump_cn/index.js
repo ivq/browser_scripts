@@ -1,10 +1,11 @@
 // ==UserScript==
-// @name         维基百科优先简体中文（或繁体）
-// @version      0.15
+// @name         维基百科优先简体中文（或繁体）continued
+// @version      0.20
 // @description  Wikipedia 维基百科中文优先选择地区 简/繁 中文。
-// @author       Erimus
+// @author       Erimus, Chien Wong
 // @include      http*://zh.wikipedia.org/*
-// @namespace    https://greasyfork.org/users/46393
+// @namespace    https://greasyfork.org/users/234148
+// @license      MIT
 // ==/UserScript==
 
 (function() {
