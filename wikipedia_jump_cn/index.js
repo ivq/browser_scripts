@@ -18,16 +18,7 @@
 
     console.log('自动切换维基语言')
 
-    let langs = {
-            'zh-cn': '大陆简体',
-            'zh-hk': '香港繁體',
-            'zh-mo': '澳門繁體',
-            'zh-my': '大马简体',
-            'zh-sg': '新加坡简体',
-            'zh-tw': '臺灣正體'
-        },
-        target_lang = 'zh-cn',  // 在这里输入你需要的语言
-        target_lang_name = langs[target_lang]
+    let target_lang = 'zh-cn'  // 在这里输入你需要的语言
 
     let url = document.URL
     console.log('Url:', url)
@@ -36,22 +27,10 @@
     if (url.includes(target_lang)) {
         console.log('当前语言:', target_lang, '无需变更')
     } else {
-        let find_current_lang = setInterval(function() {
-            let current_lang = document.querySelector('#mw-head #p-variants-label span').innerHTML
-            console.log('当前语言:', current_lang)
-            if (current_lang) {
-                clearInterval(find_current_lang)
-                // 简体默认为【简体】，而不是【大陆简体】。所以判断includes。
-                if (target_lang_name == current_lang) {
-                    console.log('当前语言:', current_lang, '无需变更')
-                } else {
-                    switch_to_target_lang()
-                }
-            }
-        }, 500)
+        switch_to_target_lang()
     }
 
-    let switch_to_target_lang = function() {
+    function switch_to_target_lang() {
         let pieces = url.split('/'),
             lang = pieces[3],
             word = pieces[pieces.length - 1],
